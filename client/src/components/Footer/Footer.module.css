@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+
+.footer {
+  background-color: #29335c;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  height: 20vh;
+  width: 100%;
+  margin-top: auto;
+  align-items: center;
+}
+
+.navigate {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+
+.icons img {
+  width: 50px;
+}
+
+.legal {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.nolink{
+  cursor: default;
+}
+
+.link, .nolink{
+  text-decoration: none;
+  font-size: 10px;
+  font-weight:lighter;
+  color: antiquewhite;
+}
+
+.link:hover {
+  text-decoration: underline rgb(104, 225, 112);
+  color: rgb(104, 225, 112);
+}

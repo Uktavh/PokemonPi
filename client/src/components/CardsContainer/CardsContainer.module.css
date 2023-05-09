@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: 80vh;
+}
+
+.cardsContainer {
+    width: 90%;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.containerButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 116, 43);
+    height: 5vh;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-family: 'MetalSlug';
+    font-size: 25px;
+    font-weight:bold;
+    color: white;
+    background: none;
+    border: 2px solid white;
+    backdrop-filter: blur(15px);
+    background-color: brown;
+}
+
+.buttons:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+
+.ningunJuego {
+    margin-top: 10%;
+    color: rgb(255, 0, 0);
+    width: 550px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'MetalSlug';
+    font-size: 40px;
+    text-shadow: 2px 2px 1px rgb(175, 163, 163);
+    letter-spacing: 2px;
+}

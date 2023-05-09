@@ -1,0 +1,492 @@
+:root {
+  --bug: url(https://i.pinimg.com/564x/91/07/75/9107755afdc87f68c6e1137e6d947c90.jpg);
+  --dark: url(https://i.pinimg.com/564x/46/c7/2a/46c72aa8ffb263713c40385a16280817.jpg);
+  --dragon: url(https://i.pinimg.com/564x/1f/9b/46/1f9b463f2d6c54dacee12454b5ec6f47.jpg);
+  --electric: url(https://cdna.artstation.com/p/assets/images/images/049/192/598/large/miki-spear-of-lightning-72resweb.jpg?1651897178);
+  --fairy: url(https://i.pinimg.com/564x/19/86/6c/19866ca5a67d581ca6e95caf0aaa4893.jpg);
+  --fighting: url(https://i.pinimg.com/736x/81/16/f5/8116f5c22f44ab9495d6f32c077776ed.jpg);
+  --fire: url(https://i.pinimg.com/564x/42/8a/86/428a864d4999ce2bbc1deaf9fce0c745.jpg);
+  --ghost: url(https://i.pinimg.com/564x/5f/ae/05/5fae05fa3a9ae1e731e566ddf38dee50.jpg);
+  --grass: url(https://i.pinimg.com/564x/03/77/d2/0377d23c2deb31a9c26259ee4c108654.jpg);
+  --ground: url(https://i.pinimg.com/564x/01/f4/c4/01f4c4e266922bc862c68541fde17929.jpg);
+  --ice: url(https://i.pinimg.com/564x/a3/45/c1/a345c1f6688199da068710a3a3391299.jpg);
+  --normal: url(https://i.pinimg.com/564x/e2/20/1a/e2201a6a102d029f095446eb52fb6d46.jpg);
+  --poison: url(https://i.pinimg.com/564x/9e/95/b5/9e95b5e80cf5ce74737c211dfeef6aab.jpg);
+  --psychic: url(https://i.pinimg.com/564x/45/69/df/4569df39bd10579dd1d8c397a4ba48e2.jpg);
+  --rock: url(https://i.pinimg.com/564x/d8/71/32/d87132f6a045f9d7992bc6ff3c1acbd8.jpg);
+  --shadow: url(https://i.pinimg.com/564x/43/a2/c1/43a2c14ed38219d68da1d4d1e3655a09.jpg);
+  --steel: url(https://i.pinimg.com/564x/b7/17/34/b71734bb8fc2161ea9e6df6dc2665a44.jpg);
+  --unknown: url(https://i.pinimg.com/564x/10/61/de/1061de65374715567703fe1546389e77.jpg);
+  --water: url(https://i.pinimg.com/750x/0d/16/de/0d16de317fca525ffe80c0cbe85d7f4b.jpg);
+  --flying: url(https://i.pinimg.com/564x/46/3f/77/463f7796db0c1c86f010362ea33cfef9.jpg);
+  --created: url(https://i.pinimg.com/564x/5b/b3/d2/5bb3d27359a6209b854d18d8877fb965.jpg)
+}
+
+@font-face {
+  font-family: "PokeFont" ;
+  src: url('../../assets/PokeFontNormal.woff2') format('woff');
+  font-weight: normal;
+}
+@font-face {
+  font-family: "PokeFont" ;
+  src: url('../../assets/PokeFontBolder.woff2') format('woff');
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "Gender" ;
+  src: url('../../assets/Gender.woff') format('woff');
+  font-weight: normal;
+}
+
+.card {
+  width: 110px;
+  height: 150px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 3%;
+  transition: transform 0.5s ease, box-shadow 0.2s ease;
+  will-change: transform, filter;
+  background-image: var(--front);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 2px solid var(--color0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;;
+}
+
+.card:hover {
+  box-shadow: -20px -20px 30px -25px var(--color1), 20px 20px 30px -25px var(--color2), -7px -7px 10px -5px var(--color1), 7px 7px 10px -5px var(--color2), 0 0 13px 4px rgba(255, 255, 255, 0.3), 0 55px 35px -20px rgba(0, 0, 0, 0.5);
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  mix-blend-mode: color-dodge;
+  transition: all 0.33s ease;
+}
+
+.card::before {
+  background-position: 50% 50%;
+  background-size: 300% 300%;
+  background-image: linear-gradient(115deg, transparent 0%, var(--color1) 25%, transparent 47%, transparent 53%, var(--color2) 75%, transparent 100%);
+  opacity: 0.5;
+  filter: brightness(0.5) contrast(1);
+  z-index: 1;
+}
+
+.card::after {
+  opacity: 1;
+  background-image:  url(https://as1.ftcdn.net/v2/jpg/01/89/87/62/1000_F_189876219_tAE0aluj20mlagbzOnCKSbEs17lUfcQP.jpg),url("https://favim.com/pd/s12/gif_previews/6/681/6813/68134/6813457.gif");
+  background-position: 50% 50%;
+  background-size: 160%;
+  background-blend-mode:saturation;
+  z-index: 0;
+  filter: brightness(0.7) contrast(1);
+  transition: all 0.33s ease;
+  opacity: 0.75;
+}
+
+.card:hover::after {
+  filter: brightness(1) contrast(1);
+  opacity: 1;
+}
+
+.card:hover {
+  animation: none;
+  transition: box-shadow 0.1s ease-out;
+}
+
+.card:hover::before {
+  animation: none;
+  background-image: linear-gradient(110deg, transparent 25%, var(--color2) 48%, var(--color3) 52%, transparent 75%);
+  background-position: 50% 50%;
+  background-size: 250% 250%;
+  opacity: 0.88;
+  filter: brightness(0.66) contrast(1.33);
+  transition: none;
+}
+
+.card.animated {
+  transition: none;
+  animation: holoCard 12s ease 0s 1;
+}
+.card.animated::before {
+  transition: none;
+  animation: holoGradient 12s ease 0s 1;
+}
+.card.animated::after {
+  transition: none;
+  animation: holoSparkle 12s ease 0s 1;
+}
+
+@keyframes holoSparkle {
+  0%, 100% {
+    opacity: 0.75;
+    background-position: 50% 50%;
+    filter: brightness(1.2) contrast(1.25);
+  }
+  5%, 8% {
+    opacity: 1;
+    background-position: 40% 40%;
+    filter: brightness(0.8) contrast(1.2);
+  }
+  13%, 16% {
+    opacity: 0.5;
+    background-position: 50% 50%;
+    filter: brightness(1.2) contrast(0.8);
+  }
+  35%, 38% {
+    opacity: 1;
+    background-position: 60% 60%;
+    filter: brightness(1) contrast(1);
+  }
+  55% {
+    opacity: 0.33;
+    background-position: 45% 45%;
+    filter: brightness(1.2) contrast(1.25);
+  }
+}
+@keyframes holoGradient {
+  0%, 100% {
+    opacity: 0.5;
+    background-position: 50% 50%;
+    filter: brightness(0.5) contrast(1);
+  }
+  5%, 9% {
+    background-position: 100% 100%;
+    opacity: 1;
+    filter: brightness(0.75) contrast(1.25);
+  }
+  13%, 17% {
+    background-position: 0% 0%;
+    opacity: 0.88;
+  }
+  35%, 39% {
+    background-position: 100% 100%;
+    opacity: 1;
+    filter: brightness(0.5) contrast(1);
+  }
+  55% {
+    background-position: 0% 0%;
+    opacity: 1;
+    filter: brightness(0.75) contrast(1.25);
+  }
+}
+@keyframes holoCard {
+  0%, 100% {
+    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+  }
+  5%, 8% {
+    transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg);
+  }
+  13%, 16% {
+    transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg);
+  }
+  35%, 38% {
+    transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg);
+  }
+  55% {
+    transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg);
+  }
+}
+
+.frontLayer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.top {
+  background: var(--color0);
+  max-width: 90%;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bolder;
+  color: var(--color1);
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  font-family: 'Pokefont' ;
+  font-weight: bolder;
+  font-size: 10px;
+  
+}
+
+.img{
+  width: 90%;
+}
+
+.gender {
+  font-weight: bolder;
+  font-size: 10px;
+  font-family: 'Gender';
+  
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.show {
+  animation-name: show;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  max-width: 90%;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  background-color: var(--color0);
+  color: var(--color1);
+  font-family: 'Pokefont';
+  font-size: 10px;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.bottom p {
+  margin: 5px
+}
+
+.shinyButton {
+  position: absolute;
+  z-index: 2;
+  width: 15%;
+  top:60%;
+  left: 65%;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.placeholder img {
+  width: 50%;
+  height: auto;
+}
+
+.card.bug {
+  --color0:  #9e5858;
+  --color1: #5b1e61;
+  --color2: #ccab6f9d;
+  --color3: #fecdb38c;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--bug);
+}
+.card.created {
+  --color0:  #ff5b9a;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--created);
+}
+.card.dark {
+  --color0:  #986dfd;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--dark);
+}
+.card.dragon {
+  --color0:  #5468fe;
+  --color1: #5b1e61;
+  --color2: #a49e7c;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--dragon);
+}
+.card.electric {
+  --color0:  #f4ff56;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--electric);
+}
+.card.fairy {
+  --color0:  #ff7bc1;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--fairy);
+}
+.card.fighting {
+  --color0:  #ff3131;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--fighting);
+}
+.card.fire {
+  --color0:  #ffbb00;
+  --color1: #5b1e61;
+  --color2: #f8a100;
+  --color3: #ff990082;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--fire);
+  --gif: url("https://media.tenor.com/bQvEhQcSGmEAAAAM/twinkle-little-star.gif")
+}
+.card.ghost {
+  --color1: #ec9bb6;
+  --color1: #5b1e61;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--ghost);
+}
+.card.grass {
+  --color0:  #02ff89;
+  --color1: #5b1e61;
+  --color2: #ccab6fb9;
+  --color3: #69e4a4b1;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --color6: #b98cce;
+  --front: var(--grass);
+  --gif: url("https://favim.com/pd/s12/gif_previews/6/681/6813/68134/6813457.gif")
+}
+.card.ground {
+  --color0:  #b34b0a;
+  --color1: #651818;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --color6: #e1d0e9;
+  --front: var(--ground);
+}
+.card.ice {
+  --color0:  #8be0ff;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--ice);
+}
+.card.normal {
+  --color0:  #ffe69c;
+  --color1: #5b1e61;
+  --color2: #f5deb46e;
+  --color3: #a3a2b28d;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--normal);
+}
+.card.poison {
+  --color0:  #30d241;
+  --color1: #5b1e61;
+  --color2: #85cc6f9f;
+  --color3: #69e4a482;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--poison);
+}
+.card.psychic {
+  --color0:  #f7ff19;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--psychic);
+}
+.card.rock {
+  --color0:  #f7ff19;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--rock);
+}
+.card.shadow {
+  --color0:  #f7ff19;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--shadow);
+}
+.card.steel {
+  --color0:  #f7ff19;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--steel);
+}
+.card.unknown {
+  --color0:  #f7ff19;
+  --color1: #5b1e61;
+  --color2: #ccac6f;
+  --color3: #69e4a5;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--unknown);
+}
+.card.water {
+  --color0: #8bd8ff;
+  --color1: #5b1e61;
+  --color2: #0091f2ae;
+  --color3: #01ff5e5a;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--water);
+  --gif: url("https://favim.com/pd/s12/gif_previews/6/681/6813/68134/6813457.gif")
+}
+.card.flying {
+  --color0: #92ccce;
+  --color1: #5b1e61;
+  --color2: #6f82cca8;
+  --color3: #95adfb8b;
+  --color4: #8ec5d6;
+  --color5: #b98cce;
+  --front: var(--flying);
+}

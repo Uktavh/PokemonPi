@@ -1,0 +1,96 @@
+.formContainer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+  }
+  
+  .formContainer h1 {
+    margin-bottom: 20px;
+  }
+  
+  .formContainer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .formContainer form .formGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 10px 0;
+  }
+  
+  .formContainer form .formGroup label {
+    margin-bottom: 5px;
+  }
+  
+  .formContainer form .formGroup input {
+    width: 30%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+  
+  }
+  
+  .formContainer form .formGroup select {
+    width: 30%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+  
+  .formContainer form .formGroup button {
+    width: 80%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+  
+  .formContainer form .formGroup button:hover {
+    background-color: #ccc;
+  }
+  
+  .formContainer form .formGroup button:active {
+    background-color: #aaa;
+  }
+  
+  .formContainer form .formGroup button:focus {
+    outline: none;
+  }
+  
+  .formContainer form .formGroup button:disabled {
+    background-color: #ccc;
+    color: #fff;
+    cursor: not-allowed;
+  }
+  
+  form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+	background-color: #4f1515;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }

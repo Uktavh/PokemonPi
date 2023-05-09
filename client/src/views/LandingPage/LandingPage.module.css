@@ -1,0 +1,200 @@
+
+.container {
+  display: flex;
+  width: 93vw;
+
+  justify-content: center;
+  align-items: center;
+  /* background-color: aquamarine; */
+  overflow: hidden;
+}
+
+.panel {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50px;
+  color: #fff;
+  cursor:zoom-in;
+  flex: 0.5;
+  margin: 5px;
+  position: relative;
+  filter:sepia();
+  transition: flex 1s ease-in-out;
+  overflow: hidden;
+  }
+
+.panel h3 {
+  font-size: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+  
+  cursor:default;
+  filter: none;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.9s ease-in 0.4s;
+  background-color: rgba(237, 122, 122, 0.5); /* set the background color to transparent white */
+  backdrop-filter: blur(5px); /* apply a blur effect to the container */
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.logo {
+width: 100vw;
+height: 10vh;
+background-image: url("https://pluspng.com/img-png/pokemon-logo-png-pokemon-logo-png-2000.png");
+background-size:contain;
+background-repeat: no-repeat;
+/* background-color: aqua; */
+background-position: center;
+
+}
+
+.landing {
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100vw;
+}
+
+.pressenter {
+
+  animation: blink 1s infinite;
+  margin: 0;
+  font-family: 'Press Start 2P' cursive;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #c10000;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.9s ease-in 0.4s;
+  background-color: rgba(237, 122, 122, 0.5); /* set the background color to transparent white */
+  backdrop-filter: blur(5px); /* apply a blur effect to the container */
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.pressenter:hover {
+  background-color: #3b38e1ba;
+  animation: none;
+}
+
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+.welcome {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #c47777;
+  padding: 30px;
+}
+
+.welcome p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.welcomeH {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #60d57d;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content:space-around
+}
+
+.welcomeH p {
+  font-size: 8px;
+  margin: 0;
+  text-align: center;
+}
+
+.logoW {
+    width: 15vw;
+  height: 10vh;
+  background-image: url("https://pluspng.com/img-png/pokemon-logo-png-pokemon-logo-png-2000.png");
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-color: aqua;  
+  background-position: center;
+  align-self: center;
+  position: fixed;
+}
+
+.panel.active .titlecard{
+  font-size: 25px;
+  opacity: 1;
+  transition: opacity 0.9s ease-in 0.4s;
+  background-color: rgba(237, 122, 122, 0.5); /* set the background color to transparent white */
+  backdrop-filter: blur(5px); /* apply a blur effect to the container */
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border-radius: 20px;
+  padding: 20px;
+}
+
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the component */
+.mycomponent {
+  animation-name: show;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; /* keep the component visible after the animation ends */
+}
+
+
+.animationcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.animatedtext {
+  animation: slide-in 1s ease-in-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
